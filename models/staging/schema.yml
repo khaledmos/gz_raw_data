@@ -21,6 +21,10 @@ sources:
         tests:
           - unique:
               column_name: "(orders_id || '-' || pdt_id)"
+        freshness:
+          warn_after:
+            count: 90
+            period: day
 
       - name: ship
         identifier: raw_gz_ship
