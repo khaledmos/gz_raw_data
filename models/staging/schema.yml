@@ -126,5 +126,5 @@ models:
     description: data of aggregated version of int_campaigns model for each day
   - name: finance_campaigns_day
     description: data of aggregated version of int_campaigns_day model for each day including ads_margin
-
-
+  - name: finance_campaigns_month
+    description: data of aggregated version of finance_campaigns_day model for each month
