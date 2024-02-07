@@ -121,3 +121,6 @@ models:
   - name: int_orders_operational
   - name: finance_days
   - name: int_campaigns
+    description: data of aggregated costs of all the campaigns
+  - name: int_campaigns_day
+    description: data of aggregated version of int_campaigns model for each day
