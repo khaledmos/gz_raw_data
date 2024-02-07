@@ -39,22 +39,66 @@ sources:
       - name: adwords
         identifier: raw_gz_adwords
         description: data of adwords ads
-
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || camPGN_name)"
+          - not_null:
+              column_name:
+              - date_date
+              - paid_source
+              - campaign_key
+              - camPGN_name
+              - ads_cost
+              - impression
+              - click
 
       - name: bing
         identifier: raw_gz_bing
         description: data of bing ads
-
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || camPGN_name)"
+          - not_null:
+              column_name:
+              - date_date
+              - paid_source
+              - campaign_key
+              - camPGN_name
+              - ads_cost
+              - impression
+              - click
 
       - name: criteo
         identifier: raw_gz_criteo
         description: data of criteo ads
-
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || camPGN_name)"
+          - not_null:
+              column_name:
+              - date_date
+              - paid_source
+              - campaign_key
+              - camPGN_name
+              - ads_cost
+              - impression
+              - click
 
       - name: facebook
         identifier: raw_gz_facebook
         description: data of facebook ads
-
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || camPGN_name)"
+          - not_null:
+              column_name:
+              - date_date
+              - paid_source
+              - campaign_key
+              - camPGN_name
+              - ads_cost
+              - impression
+              - click
 
 models:
   - name: stg_raw__sales
@@ -76,3 +120,4 @@ models:
             - quantity
   - name: int_orders_operational
   - name: finance_days
+  - name: int_campaigns
