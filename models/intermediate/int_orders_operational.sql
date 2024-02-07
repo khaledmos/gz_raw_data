@@ -16,6 +16,9 @@ SELECT orders_id
 ,quantity
 ,purchase_cost
 ,margin
+,shipping_fee
+,logcost
+,ship_cost
 ,round(margin + shipping_fee - logcost - (CAST (ship_cost as float64)),2) AS operational_margin
 FROM join_ship
 

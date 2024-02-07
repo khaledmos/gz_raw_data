@@ -35,3 +35,11 @@ sources:
             tests:
               - unique
               - not_null
+
+models:
+  - name: stg_raw__sales
+  - name: stg_raw__product
+  - name: stg_raw__ship
+  - name: int_sales_margin
+  - name: int_orders_operational
+  - name: finance_days
