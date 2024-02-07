@@ -13,7 +13,7 @@ USING (orders_id)
 SELECT orders_id
 ,date_date
 ,CAST(revenue AS float64) AS revenue
-,quantity
+,CAST(quantity AS float64) AS quantity
 ,CAST(purchase_cost AS float64) AS purchase_cost
 ,CAST(margin AS float64) AS margin
 ,CAST(shipping_fee AS float64) AS shipping_fee
