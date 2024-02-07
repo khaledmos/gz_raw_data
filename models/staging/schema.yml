@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: greenweez raw data source
+    tables:
+      - name: product
+        identifier: raw_gz_product
+        description: products of greenweez
+        columns:
+          - name: products_id
+            description: primary key
+            tests:
+              - unique
+              - not_null
+
+      - name: sales
+        identifier: raw_gz_sales
+        description: sales of greenweez
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+        freshness:
+          warn_after:
+            count: 90
+            period: day
+
+      - name: ship
+        identifier: raw_gz_ship
+        description: shipping of greenweez
+        columns:
+          - name: orders_id
+            description: primary key
+            tests:
+              - unique
+              - not_null
+
+models:
+  - name: stg_raw__sales
+  - name: stg_raw__product
+  - name: stg_raw__ship
+  - name: int_sales_margin
+    tests:
+      - unique:
+          column_name: "(orders_id || '-' || products_id)"
+      - not_null:
+          column_name:
+            - orders_id
+            - products_id
+            - margin
+            - purchase_cost
+            - purchase_price
+            - date_date
+            - revenue
+            - quantity
+  - name: int_orders_operational
+  - name: finance_days
