@@ -41,5 +41,18 @@ models:
   - name: stg_raw__product
   - name: stg_raw__ship
   - name: int_sales_margin
+    tests:
+      - unique:
+          column_name: "(orders_id || '-' || products_id)"
+      - not_null:
+          column_name:
+            - orders_id
+            - products_id
+            - margin
+            - purchase_cost
+            - purchase_price
+            - date_date
+            - revenue
+            - quantity
   - name: int_orders_operational
   - name: finance_days
