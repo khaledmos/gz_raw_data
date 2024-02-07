@@ -124,3 +124,7 @@ models:
     description: data of aggregated costs of all the campaigns
   - name: int_campaigns_day
     description: data of aggregated version of int_campaigns model for each day
+  - name: finance_campaigns_day
+    description: data of aggregated version of int_campaigns_day model for each day including ads_margin
+
+
