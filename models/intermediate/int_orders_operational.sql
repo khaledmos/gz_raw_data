@@ -12,13 +12,13 @@ USING (orders_id)
 
 SELECT orders_id
 ,date_date
-,revenue
+,CAST(revenue AS float64) AS revenue
 ,quantity
-,purchase_cost
-,margin
-,shipping_fee
-,logcost
-,ship_cost
+,CAST(purchase_cost AS float64) AS purchase_cost
+,CAST(margin AS float64) AS margin
+,CAST(shipping_fee AS float64) AS shipping_fee
+,CAST(logcost AS float64) AS logcost
+,CAST(ship_cost AS float64) AS ship_cost
 ,round(margin + shipping_fee - logcost - (CAST (ship_cost as float64)),2) AS operational_margin
 FROM join_ship
 
